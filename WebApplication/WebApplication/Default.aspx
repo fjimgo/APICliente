@@ -22,13 +22,8 @@
 
     <div class="row">
         <div class="col-md-4">
-          
-            
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar" />
-          
-            
         </div>
-        
     </div>
 
 </asp:Content>
