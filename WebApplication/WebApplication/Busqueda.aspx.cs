@@ -8,7 +8,7 @@ namespace WebApplication
 {
     public partial class About : Page
     {
-        private const string URL = "http://Localhost:8084/";
+        private const string URL = "http://10.13.4.58:8084/";
 
         protected void Page_Load(object sender, EventArgs e)
         {

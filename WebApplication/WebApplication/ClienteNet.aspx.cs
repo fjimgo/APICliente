@@ -15,7 +15,7 @@ namespace WebApplication
 
     public partial class _Default : Page
     {
-        private const string URL = "http://Localhost:8084/";
+        private const string URL = "http://10.13.4.58:8084/";
 
         protected void Button1_Click(object sender, EventArgs e)
         {
