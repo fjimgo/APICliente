@@ -4,6 +4,12 @@ using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System.Web.UI;
 
+/// Creado por Francisco Javier Jiménez Gómez  3/9/2015
+/// <summary>
+/// Código detrás en C# para consumir una REST API usando HTTPClient
+/// utilizando la libreria Web API Client.
+/// </summary>
+
 namespace WebApplication
 {
 
@@ -13,13 +19,14 @@ namespace WebApplication
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            // Se crea una instancia de HttpClient para peticiones y respuestas HTTP mediante la URI.
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(URL);
 
-            //Añadiendo cabecera de aceptación para el formato JSON
+            // Establece y comunica al servidor la cabecera de aceptación para datos en formato JSON.
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            //Respuesta de datos
+            // Envio de solicitud GET al terminar obtiene respuesta HTTP.
             HttpResponseMessage response = client.GetAsync("RESTAPIServer/webapi/service/").Result;
             if (response.IsSuccessStatusCode)
             {
@@ -28,7 +35,8 @@ namespace WebApplication
                 GridView1.DataBind();
             }
             else
-            {
+            {   
+                // Mensaje que muestra el codigo de respuesta HTTP en caso de error.
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('"+ (int)response.StatusCode + "');", true);
             }
         }
